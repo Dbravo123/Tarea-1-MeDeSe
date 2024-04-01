@@ -1,0 +1,9 @@
+La aplicación que hemos seleccionado para llevar a cabo esta tarea es realmente simple y, sumado a que esta realizada en un contenedor de Docker, el plan de respuesta a incidentes
+no tendrá una dificultad elevada ni mucho menos. En caso de que se detecte algún incidente en la aplicación, la mejor forma de proceder será:
+
+1. Detener el contenedor de Docker en el que se está ejecutando la apliación. (Docker stop nick_del_contenedor). De esta manera la aplicación que hemos creado no podrá seguir
+recibiendo solicitudes de ningun usuario (aunque en teoría debería ser imposible que eso pase en ningún momento).
+2. Destruir el contenedor de Docker en el que se está ejecutando la aplicación. (Docker rm nick_del_contenedor). De esta manera aseguramos que toda información que pueda manetenerse
+en el contenedor de Docker sea destruida y no sea accesible.
+3.Volver a levantar un Contenedor de Docker que tenga la misma imagen que la utilizada anteriormente, de tal manera que la aplicación que se ejecute sea la misma.
+(Docker run nick_de_la_imagen).
